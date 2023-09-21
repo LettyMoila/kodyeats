@@ -4,12 +4,14 @@ import Landing from "./pages/Landing";
 import Cart from "./pages/Cart";
 import Item from "./pages/Item";
 import Home from "./pages/Home";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home />
+      <Signup />
     </View>
   );
 }

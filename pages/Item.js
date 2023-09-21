@@ -1,29 +1,17 @@
-import {
-  Image,
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
-import burgerimg from "../assets/burger-3.jpg";
-import clocky from "../assets/Clock.png";
-import star from "../assets/Star-1.png";
-import chatty from "../assets/Chat.png";
+import {Image,Text,StyleSheet,View,TextInput,TouchableOpacity} from "react-native";
 
 export default function Item() {
   return (
     <View style={styles.container}>
       <View style={styles.upper}>
         <Image
-          style={styles.imgstyle}
-          source={require("../assets/burger-3.jpg")}
-        />
+          style={{ width: "100%", height: "100%" }}
+          source={require("../assets/burger-3.jpg")}/>
         <View style={styles.rect}>
           <Text style={styles.textone}>Rating 4.7</Text>
           <Image
-            style={styles.staricon}
-            source={require("../assets/burger-3.jpg")}
+            style={{ width: "20%" }}
+            source={require("../assets/Star-1.png")}
           />
         </View>
       </View>
@@ -38,16 +26,18 @@ export default function Item() {
         <View style={styles.bluey}>
           <View style={styles.halfie}>
             <Image
-              style={styles.staricon}
-              source={require("../assets/burger-3.jpg")}
+              style={{height: "120%" }}
+              source={require("../assets/Clock.png")}
             />
+            <Text style={styles.boldie}>15 mins</Text>
             <Text style={styles.textthree}>Delivery</Text>
           </View>
           <View style={styles.halfie}>
             <Image
-              style={styles.staricon}
-              source={require("../assets/burger-3.jpg")}
+              style={{ height: "100%" }}
+              source={require("../assets/Chat.png")}
             />
+            <Text style={styles.boldie}>1k</Text>
             <Text style={styles.textthree}>Review</Text>
           </View>
         </View>
@@ -72,9 +62,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "center",
-    width: "100%",
+    marginTop: 30
   },
   upper: {
     height: "40%",
@@ -84,13 +74,15 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   rect: {
-    height: 34,
+    height: 45,
     width: 166,
     backgroundColor: "#D9D9D9",
     position: "absolute",
-    top: 192,
+    top: 250,
     justifyContent: "center",
     padding: 10,
+    gap: 10,
+    flexDirection: 'row'
   },
   pricebox: {
     height: 29,
@@ -114,7 +106,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   bluey: {
-    height: 45,
+    height: 55,
     width: "100%",
     shadowColor: "black",
     flexDirection: "row",
@@ -125,6 +117,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#38B6FF",
     justifyContent: "center",
     padding: 10,
+    gap: 10,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   textone: {
     fontSize: 16,
@@ -134,6 +129,10 @@ const styles = StyleSheet.create({
   },
   textthree: {
     fontSize: 12,
+  },
+  boldie:{
+    fontSize: 12,
+    fontWeight: 'bold'
   },
   butt: {
     alignItems: "center",
